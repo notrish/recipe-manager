@@ -36,4 +36,6 @@ class ShoppingList:
 
 
 class DietaryRecipe(Recipe):
-    pass
+    def __init__(self, name, diet_type):
+        super().__init__(name)
+        self.diet_type = diet_type

@@ -50,3 +50,19 @@ def test_shopping_list_add_recipe():
     shopping_list.add_recipe(recipe)
 
     assert shopping_list.get_items() == [ingredient]
+
+def test_dietary_recipe_creation():
+    recipe = DietaryRecipe("Salad", "vegetarian")
+
+    assert recipe.name == "Salad"
+    assert recipe.diet_type == "vegetarian"
+    assert recipe.ingredients == []
+
+
+def test_dietary_recipe_add_ingredient():
+    recipe = DietaryRecipe("Salad", "vegetarian")
+    ingredient = Ingredient("Tomato", 2, "pcs")
+
+    recipe.add_ingredient(ingredient)
+
+    assert recipe.get_ingredients() == [ingredient]
