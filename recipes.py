@@ -24,7 +24,15 @@ class Recipe:
 
 
 class ShoppingList:
-    pass
+    def __init__(self):
+        self.items = []
+
+    def add_recipe(self, recipe):
+        for ingredient in recipe.get_ingredients():
+            self.items.append(ingredient)
+
+    def get_items(self):
+        return self.items
 
 
 class DietaryRecipe(Recipe):

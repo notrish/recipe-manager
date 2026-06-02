@@ -33,3 +33,20 @@ def test_recipe_add_ingredient():
     recipe.add_ingredient(ingredient)
 
     assert recipe.get_ingredients() == [ingredient]
+
+
+def test_shopping_list_creation():
+    shopping_list = ShoppingList()
+
+    assert shopping_list.items == []
+
+
+def test_shopping_list_add_recipe():
+    recipe = Recipe("Pancakes")
+    ingredient = Ingredient("Flour", 200, "g")
+    recipe.add_ingredient(ingredient)
+
+    shopping_list = ShoppingList()
+    shopping_list.add_recipe(recipe)
+
+    assert shopping_list.get_items() == [ingredient]
