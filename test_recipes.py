@@ -18,3 +18,18 @@ def test_ingredient_str():
 def test_ingredient_invalid_quantity():
     with pytest.raises(ValueError):
         Ingredient("Sugar", 0, "g")
+
+def test_recipe_creation():
+    recipe = Recipe("Pancakes")
+
+    assert recipe.name == "Pancakes"
+    assert recipe.ingredients == []
+
+
+def test_recipe_add_ingredient():
+    recipe = Recipe("Pancakes")
+    ingredient = Ingredient("Flour", 200, "g")
+
+    recipe.add_ingredient(ingredient)
+
+    assert recipe.get_ingredients() == [ingredient]
